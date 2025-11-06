@@ -4,7 +4,6 @@ import dev.project.TodoList.TodoListApp.Models.Todo;
 import dev.project.TodoList.TodoListApp.Repositories.TodoRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
 public class TodoService {
@@ -14,5 +13,9 @@ public class TodoService {
 
     public Todo createTodo(Todo item) {
         return todoRespository.save(item);
+    }
+
+    public Todo getTodo(Long id) {
+        return todoRespository.getReferenceById(id);
     }
 }
